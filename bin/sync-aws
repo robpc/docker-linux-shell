@@ -1,0 +1,17 @@
+#!/bin/bash
+
+if [ -d '/home/host/.aws' ]; then
+    mkdir -p ~/.aws
+    cp -R /home/host/.aws ~/
+    chmod go-rwx -R ~/.aws
+else
+    echo "Warning: No .aws directory found in '/home/host/.aws'"
+fi
+
+if [ -d '/home/host/.ecs' ]; then
+    mkdir -p ~/.aws
+    cp -R /home/host/.ecs ~/
+    chmod go-rwx -R ~/.ecs
+else
+    echo "Warning: No .ecs directory found in '/home/host/.ecs'"
+fi

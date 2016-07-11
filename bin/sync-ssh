@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if [ -d '/home/host/.ssh' ]; then
+    mkdir -p ~/.ssh
+    cp -R /home/host/.ssh ~/
+    chmod go-rwx -R ~/.ssh
+else
+    echo "Warning: No .ssh directory found in '/home/host/.ssh'"
+fi
